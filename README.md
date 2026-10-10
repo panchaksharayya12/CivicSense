@@ -2,6 +2,38 @@
 
 **"From Citizen Voice to City Action."**
 
+---
+
+## Project Quick Access & Deliverables
+
+| Deliverable | Live Vercel 1-Click Download | View on GitHub |
+| :--- | :--- | :--- |
+| **Project Technical Report (`.docx`)** | [Download Word Report](https://civic-sense-rouge.vercel.app/CivicSense_Project_Report.docx) | [View on GitHub](https://github.com/panchaksharayya12/CivicSense/blob/main/CivicSense_Project_Report.docx) |
+| **10-Slide Presentation Deck (`.pptx`)** | [Download PowerPoint Deck](https://civic-sense-rouge.vercel.app/CivicSense_Presentation.pptx) | [View on GitHub](https://github.com/panchaksharayya12/CivicSense/blob/main/CivicSense_Presentation.pptx) |
+| **Interactive Online Slide Deck** | [Open Live Deck](https://civic-sense-rouge.vercel.app/presentation) | [View on GitHub](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/presentation/page.tsx) |
+| **Live Production Platform** | [https://civic-sense-rouge.vercel.app](https://civic-sense-rouge.vercel.app) | [panchaksharayya12/CivicSense](https://github.com/panchaksharayya12/CivicSense) |
+
+---
+
+## Core Source Files & Direct GitHub Links
+
+| Subsystem / Feature | Direct GitHub File Link | Key Responsibilities |
+| :--- | :--- | :--- |
+| **Citizen Problem Registration Wizard** | [`src/app/report/page.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/report/page.tsx) | 4-step reporting flow with voice typing, GPS pin-drop, and photo upload |
+| **Citizen Dashboard** | [`src/app/dashboard/page.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/dashboard/page.tsx) | Citizen home portal, quick actions, recent filings, and city impact metrics |
+| **Applications Management** | [`src/app/applications/page.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/applications/page.tsx) | Searchable complaint table with status filters and direct tracking |
+| **Real-Time Complaint Tracker** | [`src/app/status/[id]/page.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/status/[id]/page.tsx) | 5-stage visual progress timeline, assigned officer info, and history |
+| **Admin Operations Dashboard** | [`src/app/admin/page.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/admin/page.tsx) | Municipal command center, real-time KPI metrics, and triage queues |
+| **Consolidated Incidents Hub** | [`src/app/admin/incidents/page.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/app/admin/incidents/page.tsx) | Master Incident clustering engine merging duplicate citizen reports |
+| **Live Municipal GIS Command Map** | [`src/components/CityMap.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/components/CityMap.tsx) | Full-screen interactive Leaflet map with ward boundaries & incident heatmaps |
+| **Government Inspection Generator** | [`src/components/GovernmentReportGenerator.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/components/GovernmentReportGenerator.tsx) | Official audit-ready inspection reports with seal and engineer sign-off |
+| **Voice Typing (Speech Recognition)** | [`src/components/VoiceTyping.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/components/VoiceTyping.tsx) | Real-time speech-to-text dictation supporting 6 Indian languages |
+| **Interactive Civic AI Assistant** | [`src/components/CivicSenseAIChat.tsx`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/components/CivicSenseAIChat.tsx) | Floating AI chatbot guiding citizens and navigating municipal services |
+| **Multilingual Localization Engine** | [`src/lib/i18n.ts`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/lib/i18n.ts) | 120+ translation dictionary keys across EN, KN, HI, TA, TE, MR |
+| **Database Schemas & Data Models** | [`src/lib/types.ts`](https://github.com/panchaksharayya12/CivicSense/blob/main/src/lib/types.ts) | Strict TypeScript schemas for complaints, incidents, and departments |
+
+---
+
 CivicSense is a production-style Smart City and Civic Technology platform designed to connect citizens with municipal departments through AI complaint understanding, location intelligence, duplicate incident consolidation, transparent status tracking, and automated government report generation.
 
 ---
