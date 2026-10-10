@@ -1,0 +1,304 @@
+{
+  "users": [
+    {
+      "id": "usr-rashmi",
+      "name": "Rashmi G",
+      "email": "rashmi@civicsense.in",
+      "phone": "+91 98765 43210",
+      "role": "citizen",
+      "preferred_language": "en",
+      "created_at": "2026-04-10T09:00:00.000Z",
+      "password_hash": "$2a$10$KwNJok/TNUXbGzehVAXguO5WYic1f7kBhDD.JyTt37U8ex2G8/W2y"
+    },
+    {
+      "id": "usr-admin",
+      "name": "Municipal Admin Officer",
+      "email": "admin@civicsense.in",
+      "phone": "+91 80 2222 1111",
+      "role": "admin",
+      "preferred_language": "en",
+      "created_at": "2026-04-01T08:00:00.000Z",
+      "password_hash": "$2a$10$FqSpJp6l7NuTvpgNd21s/O2EWogQqRTUiOHuesX9n6/6J5kRx1zR2"
+    },
+    {
+      "id": "usr-1790862327879",
+      "name": "Suresh Rao",
+      "email": "newcitizen@civicsense.in",
+      "phone": "+91 91234 56789",
+      "role": "citizen",
+      "preferred_language": "kn",
+      "created_at": "2026-10-01T13:45:27.879Z",
+      "password_hash": "$2a$10$Wg9zjPDGna5dprBpQs8czOe9T6M45F90LevoHNDpDvMezdoXabK96"
+    },
+    {
+      "id": "usr-1790864500300",
+      "name": "Panchaksharayya",
+      "email": "panchaksharayyabtech24@ced.alliance.edu.in",
+      "phone": "+918310813290",
+      "role": "citizen",
+      "preferred_language": "en",
+      "created_at": "2026-10-01T14:21:40.300Z",
+      "password_hash": "$2a$10$Y3O2yciUMpoctjl27X7BBu8wB1FW8IRI2FcFd7Tl3CHGecvF7qX1O"
+    }
+  ],
+  "complaints": [
+    {
+      "user_id": "usr-rashmi",
+      "user_name": "Rashmi G",
+      "category": "traffic",
+      "issue_type": "Pothole",
+      "description_original": "ಇಲ್ಲಿ ರೋಡ್ ಕೆಟ್ಟುಹೋಗಿದೆ.",
+      "description_normalized": "The road here is bad.",
+      "language": "kn",
+      "latitude": 12.730301722854486,
+      "longitude": 77.70963513833475,
+      "address": "Anekal Main Road, Kammasandra Agrahara, Bengaluru, Karnataka, 562106",
+      "location_source": "gps",
+      "image_url": "/uploads/evidence_img_1791362305216_hy40z4.avif",
+      "photo_authenticity": {
+        "is_authentic": true,
+        "confidence": 96,
+        "status": "authentic",
+        "label": "Verified Real On-Site Photo",
+        "reason": "Natural daylight lighting, realistic material fracture/surface degradation, and non-synthetic pixel continuity verified.",
+        "checks": [
+          "Natural outdoor daylight & physical shadow angle verified",
+          "Real physical surface degradation & pavement/pipeline texture confirmed",
+          "Zero generative AI diffusion or Photoshop manipulation detected",
+          "Visual characteristics match reported domain (TRAFFIC)"
+        ]
+      },
+      "severity": "medium",
+      "urgency": "normal",
+      "ai_confidence": 95,
+      "recommended_department": "Road Maintenance & Traffic Department",
+      "status": "assigned",
+      "id": "cmp-1791362333589",
+      "application_id": "CS-2026-00001",
+      "created_at": "2026-10-07T08:38:53.591Z",
+      "updated_at": "2026-10-07T08:39:36.301Z",
+      "assigned_department": "Road Maintenance & Traffic Department",
+      "assigned_officer": "Sudeep (Junior Engineer)"
+    }
+  ],
+  "incidents": [],
+  "incident_complaints": [],
+  "status_history": [
+    {
+      "id": "sh-1791362333592",
+      "complaint_id": "cmp-1791362333589",
+      "old_status": "submitted",
+      "new_status": "submitted",
+      "changed_by": "System",
+      "note": "Application submitted and received in Municipal Grievance Core.",
+      "created_at": "2026-10-07T08:38:53.591Z"
+    },
+    {
+      "id": "sh-1791362362185",
+      "complaint_id": "cmp-1791362333589",
+      "old_status": "assigned",
+      "new_status": "assigned",
+      "changed_by": "Municipal Admin Officer",
+      "note": "Assigned to Road Maintenance & Traffic Department (Officer: Sudeep (Junior Engineer)).",
+      "created_at": "2026-10-07T08:39:22.185Z"
+    },
+    {
+      "id": "sh-1791362362189",
+      "complaint_id": "cmp-1791362333589",
+      "old_status": "assigned",
+      "new_status": "submitted",
+      "changed_by": "Municipal Admin Officer",
+      "note": "Complaint status updated from assigned to submitted.",
+      "created_at": "2026-10-07T08:39:22.189Z"
+    },
+    {
+      "id": "sh-1791362376301",
+      "complaint_id": "cmp-1791362333589",
+      "old_status": "assigned",
+      "new_status": "assigned",
+      "changed_by": "Municipal Admin Officer",
+      "note": "Assigned to Road Maintenance & Traffic Department (Officer: Sudeep (Junior Engineer)).",
+      "created_at": "2026-10-07T08:39:36.301Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1791362376301",
+      "user_id": "usr-rashmi",
+      "complaint_id": "cmp-1791362333589",
+      "application_id": "CS-2026-00001",
+      "title": "Department assigned",
+      "message": "Your complaint CS-2026-00001 has been assigned to Road Maintenance & Traffic Department.",
+      "type": "assignment",
+      "read": false,
+      "created_at": "2026-10-07T08:39:36.301Z"
+    },
+    {
+      "id": "notif-1791362362189",
+      "user_id": "usr-rashmi",
+      "complaint_id": "cmp-1791362333589",
+      "application_id": "CS-2026-00001",
+      "title": "Complaint Received",
+      "message": "Application CS-2026-00001 is now submitted. ",
+      "type": "status_update",
+      "read": false,
+      "created_at": "2026-10-07T08:39:22.189Z"
+    },
+    {
+      "id": "notif-1791362362185",
+      "user_id": "usr-rashmi",
+      "complaint_id": "cmp-1791362333589",
+      "application_id": "CS-2026-00001",
+      "title": "Department assigned",
+      "message": "Your complaint CS-2026-00001 has been assigned to Road Maintenance & Traffic Department.",
+      "type": "assignment",
+      "read": false,
+      "created_at": "2026-10-07T08:39:22.185Z"
+    },
+    {
+      "id": "notif-1791362333592",
+      "user_id": "usr-rashmi",
+      "complaint_id": "cmp-1791362333589",
+      "application_id": "CS-2026-00001",
+      "title": "Your complaint has been received",
+      "message": "Application CS-2026-00001 has been submitted successfully. Our AI system has logged your complaint.",
+      "type": "status_update",
+      "read": false,
+      "created_at": "2026-10-07T08:38:53.591Z"
+    }
+  ],
+  "departments": [
+    {
+      "id": "dept-1",
+      "name": "Waste Management Department",
+      "description": "Solid waste management, garbage clearance, and sanitation.",
+      "officer_count": 42,
+      "active": true
+    },
+    {
+      "id": "dept-2",
+      "name": "Road Maintenance & Traffic Department",
+      "description": "Road repairs, pothole filling, traffic signaling, and civil works.",
+      "officer_count": 58,
+      "active": true
+    },
+    {
+      "id": "dept-3",
+      "name": "Water Supply & Sewerage Board",
+      "description": "Potable water distribution, pipeline repairs, and sewage systems.",
+      "officer_count": 36,
+      "active": true
+    },
+    {
+      "id": "dept-4",
+      "name": "Electrical & Streetlight Division",
+      "description": "Streetlight maintenance, power cables, and dark spot illumination.",
+      "officer_count": 24,
+      "active": true
+    },
+    {
+      "id": "dept-5",
+      "name": "Disaster Management & Emergency Services",
+      "description": "Flood response, emergency rescue, fallen tree clearance, and hazards.",
+      "officer_count": 30,
+      "active": true
+    },
+    {
+      "id": "dept-6",
+      "name": "Urban Accessibility & Pedestrian Infrastructure",
+      "description": "Footpath maintenance, disabled ramps, and pedestrian safety.",
+      "officer_count": 18,
+      "active": true
+    },
+    {
+      "id": "dept-7",
+      "name": "Metropolitan Transport Corporation",
+      "description": "Bus shelters, transit connectivity, and public transport logistics.",
+      "officer_count": 26,
+      "active": true
+    },
+    {
+      "id": "dept-8",
+      "name": "Smart City Operations Center",
+      "description": "Citywide incident consolidation, civic analytics, and command monitoring.",
+      "officer_count": 15,
+      "active": true
+    }
+  ],
+  "helplines": [
+    {
+      "id": "hl-1",
+      "name": "City Police & Emergency Control",
+      "number": "112",
+      "description": "Immediate emergency, police, accident, and medical rescue response.",
+      "category": "emergency",
+      "is_emergency": true,
+      "active": true
+    },
+    {
+      "id": "hl-2",
+      "name": "Fire & Rescue Department",
+      "number": "101",
+      "description": "Fire disasters, building hazards, and industrial emergency rescue.",
+      "category": "emergency",
+      "is_emergency": true,
+      "active": true
+    },
+    {
+      "id": "hl-3",
+      "name": "Ambulance & Medical Emergency",
+      "number": "108",
+      "description": "Critical care medical transportation and emergency first aid.",
+      "category": "emergency",
+      "is_emergency": true,
+      "active": true
+    },
+    {
+      "id": "hl-4",
+      "name": "Municipal 24x7 Civic Helpline (Sahaya)",
+      "number": "1533",
+      "description": "Central municipal civic grievance desk for garbage, roads, and utilities.",
+      "category": "general",
+      "is_emergency": false,
+      "active": true
+    },
+    {
+      "id": "hl-5",
+      "name": "Water Supply & Sewerage Board Helpline",
+      "number": "1916",
+      "description": "Water pipeline bursts, contamination, and sewage overflows.",
+      "category": "water",
+      "is_emergency": false,
+      "active": true
+    },
+    {
+      "id": "hl-6",
+      "name": "Electricity Board (BESCOM / Smart Light)",
+      "number": "1912",
+      "description": "Power failures, dangling wires, and streetlight corridor blackouts.",
+      "category": "streetlights",
+      "is_emergency": false,
+      "active": true
+    },
+    {
+      "id": "hl-7",
+      "name": "City Traffic Police Helpline",
+      "number": "080-22943030",
+      "description": "Traffic jams, signal malfunctions, and road blockages.",
+      "category": "traffic",
+      "is_emergency": false,
+      "active": true
+    },
+    {
+      "id": "hl-8",
+      "name": "Women Safety Helpline",
+      "number": "1091",
+      "description": "24/7 dedicated support and transit safety assistance for women.",
+      "category": "general",
+      "is_emergency": true,
+      "active": true
+    }
+  ],
+  "last_app_sequence": 1,
+  "last_incident_sequence": 0
+}

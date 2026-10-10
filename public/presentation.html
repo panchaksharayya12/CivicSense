@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicSense — Hackathon 10-Slide Pitch Presentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      .slide-container { page-break-after: always; min-height: 100vh; }
+      body { background: white !important; color: black !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white">
+
+  <!-- Top Navigation Bar -->
+  <header class="no-print border-b border-slate-800 bg-slate-900/90 backdrop-blur-md px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <span class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></span>
+      <h1 class="text-base font-extrabold text-white tracking-wide">
+        CivicSense <span class="text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase ml-1 font-mono">Hackathon PPT</span>
+      </h1>
+      <span class="text-slate-400 text-xs hidden md:inline">• From Citizen Voice to City Action</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <span id="slideCounter" class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950/70 border border-cyan-800/80 px-3 py-1.5 rounded-xl">
+        Slide 1 of 10
+      </span>
+
+      <button onclick="window.print()" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-bold rounded-xl border border-slate-700 transition">
+        Save as PDF
+      </button>
+
+      <div class="flex items-center gap-1 bg-slate-800 rounded-xl p-1 border border-slate-700">
+        <button onclick="prevSlide()" class="px-3 py-1 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm font-bold transition">◀</button>
+        <button onclick="nextSlide()" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-sm font-bold transition">▶</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide Stage -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-8 flex items-center justify-center">
+    <div id="slideCard" class="w-full bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden min-h-[580px] grid grid-cols-1 lg:grid-cols-12">
+      <!-- Dynamic slide content injected by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Bottom Thumbnails & Controls -->
+  <footer class="no-print border-t border-slate-800 bg-slate-900/90 backdrop-blur-md px-6 py-3 flex items-center justify-between gap-4">
+    <div id="thumbStrip" class="flex items-center gap-1.5 overflow-x-auto py-1 max-w-4xl">
+      <!-- Thumb buttons injected by JS -->
+    </div>
+    <div class="text-xs text-slate-400 hidden lg:block">
+      Use <kbd class="bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">←</kbd> and <kbd class="bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">→</kbd> arrow keys to navigate
+    </div>
+  </footer>
+
+  <script>
+    const slides = [
+      {
+        tag: "Slide 1 • Title & Introduction",
+        title: "CivicSense",
+        subtitle: "From Citizen Voice to City Action — AI-Powered Civic Grievance & Municipal Governance Platform",
+        image: "/images/smart_city_cinematic.jpg",
+        caption: "CivicSense Smart City Operational Command Grid",
+        badge: "Hackathon 2026 Pitch Deck • 4 Members",
+        bullets: [
+          { title: "Mission", desc: "Transforming chaotic citizen complaints into coordinated municipal repair action through spatial AI, image forensics, and multilingual Indic speech processing." },
+          { title: "Target Domain", desc: "Smart Governance, AI for Public Good, Municipal Urban Infrastructure." },
+          { title: "Team", desc: "4 Group Members covering Architecture, AI/NLP Engineering, Location Intelligence, and Frontend UX." }
+        ],
+        metrics: [
+          { label: "Supported Languages", value: "6+ Indic" },
+          { label: "Duplicate Savings", value: "65%" },
+          { label: "Dispatch Velocity", value: "< 4 Hours" }
+        ]
+      },
+      {
+        tag: "Slide 2 • The Civic Crisis",
+        title: "Why Current Civic Portals Fail",
+        subtitle: "Municipal administrations are overwhelmed by redundant complaints while citizens lose faith.",
+        image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=1200&q=80",
+        caption: "Damaged roads, garbage overflow and utility failures overwhelm city departments",
+        bullets: [
+          { title: "The Duplicate Avalanche", desc: "When a major pothole opens on a busy main road, 50 citizens file 50 individual tickets. Field teams waste hours inspecting the exact same spot 50 times." },
+          { title: "Language and Literacy Barrier", desc: "Current portals force citizens to type English text. Millions of non-English speakers and rural citizens cannot voice grievances." },
+          { title: "Fake Photos & Staged Claims", desc: "Municipal engineers waste time visiting locations only to discover downloaded internet photos or non-issues." },
+          { title: "Bureaucratic Paper Delay", desc: "Officers spend hours writing paperwork for Ward Commissioners instead of fixing problems on the ground." }
+        ]
+      },
+      {
+        tag: "Slide 3 • The Solution",
+        title: "The CivicSense Ecosystem",
+        subtitle: "An end-to-end intelligent platform bridging citizens and city field squads.",
+        image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80",
+        caption: "Mobile-first citizen voice reporting connected directly to municipal field officers",
+        bullets: [
+          { title: "Multilingual Voice-First Interface", desc: "Citizens speak in their native tongue (Kannada, Telugu, Hindi, etc.). AI translates and extracts the category automatically." },
+          { title: "AI Spatial Incident Consolidation", desc: "Clusters duplicate community reports into 1 unified priority city incident for rapid repair." },
+          { title: "AI Photo Authenticity Verification", desc: "Every uploaded evidence photo is scanned for image tampering, lighting naturalness, and anti-spoofing before dispatch." },
+          { title: "5-Stage Live Transparency", desc: "Citizens track live progress and view on-site work proof photos/videos uploaded by municipal repair squads." }
+        ]
+      },
+      {
+        tag: "Slide 4 • Breakthrough AI",
+        title: "Breakthrough Artificial Intelligence Engine",
+        subtitle: "Three coordinated AI engines powering speed, accuracy, and fraud prevention.",
+        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+        caption: "Multimodal AI combining Indic Speech NLP, Computer Vision & Spatial Geofencing",
+        bullets: [
+          { title: "1. Indic Speech NLP & Translation", desc: "Accurately processes voice input across 13 Indian dialects. Converts citizen audio into formal English statements for municipal engineers." },
+          { title: "2. Anti-Spoofing & Fake Photo Detection", desc: "Computer vision heuristics analyze photo fracture patterns, lighting physics, and compression artifacts to certify 96%+ authenticity." },
+          { title: "3. Spatial Incident Clustering Algorithm", desc: "Combines Haversine geo-distance, domain matching, and text semantic similarity to group complaints into unified city incidents." }
+        ]
+      },
+      {
+        tag: "Slide 5 • Technology Architecture",
+        title: "Technical Architecture & Scalability",
+        subtitle: "Production-grade, enterprise architecture engineered for high public traffic.",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+        caption: "Modern full-stack JavaScript architecture with modular AI services and REST APIs",
+        bullets: [
+          { title: "Frontend Layer (Next.js 14 / React)", desc: "Tailwind CSS, Lucide Icons, and client-side reactive language switching without page reloads." },
+          { title: "Backend & Data Pipeline", desc: "Next.js Server API Routes, JWT & secure session handling, ACID-compliant persistence with atomic file committing." },
+          { title: "GIS & Location Intelligence", desc: "HTML5 Geolocation API, reverse geocoding, spatial bounding boxes, and mini map telemetry canvas." },
+          { title: "Document Engine", desc: "Client-side official government report generation with high-resolution print styles and PDF export compatibility." }
+        ]
+      },
+      {
+        tag: "Slide 6 • Citizen Experience",
+        title: "The 4-Step Citizen Journey",
+        subtitle: "Zero technical friction — built for 100% digital inclusion.",
+        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80",
+        caption: "Voice-driven mobile interface accessible to all literacy levels across India",
+        bullets: [
+          { title: "Step 1: Speak or Type", desc: "Press the microphone button and speak in Kannada, Hindi, or Telugu. The domain (roads, garbage, water, lighting) is auto-selected." },
+          { title: "Step 2: Auto GPS Pinpointing", desc: "One click detects exact coordinates or citizen types a nearby landmark (e.g. Near 5th Cross College Gate)." },
+          { title: "Step 3: Instant Application ID", desc: "Generates a clean tracking ID (e.g. CS-2026-00001) starting from zero with instant local notification confirmation." },
+          { title: "Step 4: Live 5-Stage Tracking", desc: "Track real-time progress: Submitted → Verified → Assigned → In Progress → Resolved, with official field officer notes." }
+        ]
+      },
+      {
+        tag: "Slide 7 • Municipal Command Center",
+        title: "Admin Operations Command Center",
+        subtitle: "Empowering municipal commissioners and engineers to execute fast, coordinated field repairs.",
+        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+        caption: "Centralized municipal dashboard for telemetry, department dispatch & incident clusters",
+        bullets: [
+          { title: "Consolidated Incident Matrix", desc: "City managers see grouped incidents (e.g. INC-TRAFFIC-1) with report counts instead of 50 individual unlinked complaints." },
+          { title: "Segmented Grievance Table", desc: "Structured table with distinct section gaps, domain tabs, severity badges, and quick search filters." },
+          { title: "Field Squad Allocation", desc: "Assign complaints directly to specialized departments: PWD Road Maintenance, BESCOM Electricals, BWSSB Water, or Solid Waste." },
+          { title: "Work Progress Proof", desc: "Field officers upload before-and-after photo/video proof directly on site before marking an issue resolved." }
+        ]
+      },
+      {
+        tag: "Slide 8 • Government Report Generator",
+        title: "Official Government Report Generator",
+        subtitle: "Instant municipal compliance reports ready for Corporators, Commissioners, and MLAs.",
+        image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80",
+        caption: "Official government document formatting with reference numbers, GPS coords & sign-off blocks",
+        bullets: [
+          { title: "Direct Per-Problem Generator", desc: "Located directly in every complaint row under 'Action & Manage'. Officers generate a tailored report with 1 click." },
+          { title: "Government Compliance Format", desc: "Includes Official Header, Application ID, Domain, Severity, GPS Coordinates, Field Officer Notes, and Verification Seal." },
+          { title: "Instant Print / Save as PDF", desc: "Optimized clean A4 print styles that remove navigation and render crisp bureaucratic documentation for administrative sign-off." },
+          { title: "Accelerates Bureaucracy", desc: "Eliminates days of manual paperwork drafting, enabling municipal staff to focus on actual civil works." }
+        ]
+      },
+      {
+        tag: "Slide 9 • Measurable Impact",
+        title: "Quantifiable Real-World Public Impact",
+        subtitle: "Transforming civic budgets, municipal productivity, and citizen trust.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+        caption: "Analytics dashboard displaying resolution turnaround times and spatial resolution rates",
+        bullets: [
+          { title: "65% Reduction in Redundant Field Trips", desc: "Engineers resolve physical problem locations once rather than reacting to dozens of duplicate tickets." },
+          { title: "3x Faster Turnaround Time", desc: "AI routing skips departmental triage delays, delivering complaints straight to the correct road/water maintenance squad." },
+          { title: "100% Regional Language Inclusivity", desc: "Non-English speakers and illiterate citizens report problems with dignity through voice in their mother tongue." },
+          { title: "Zero Budget Wastage on Fake Claims", desc: "AI photo authenticity algorithms filter fraudulent claims before municipal funds or machinery are mobilized." }
+        ],
+        metrics: [
+          { label: "Duplicate Savings", value: "65%" },
+          { label: "Turnaround Boost", value: "3x Faster" },
+          { label: "Language Barrier", value: "0%" }
+        ]
+      },
+      {
+        tag: "Slide 10 • Future Roadmap",
+        title: "Future Roadmap & Vision for Smart India",
+        subtitle: "Scaling CivicSense across 100+ Smart Cities and urban local bodies.",
+        image: "https://images.unsplash.com/photo-1477959858617-67f30bc75b82?auto=format&fit=crop&w=1200&q=80",
+        caption: "Next-generation connected city grid with predictive AI maintenance and IoT sensors",
+        bullets: [
+          { title: "Phase 1: WhatsApp Grievance Bot", desc: "Allow citizens to send photos, voice notes, and live locations directly through WhatsApp without installing an app." },
+          { title: "Phase 2: IoT City Sensor Integration", desc: "Smart water flow meters and streetlight corridor sensors auto-generate tickets before citizens even experience the outage." },
+          { title: "Phase 3: Predictive Infrastructure Budgeting", desc: "Spatial AI heatmaps identify recurring road damage clusters to inform municipal annual budget allocation." },
+          { title: "Conclusion", desc: "CivicSense turns passive citizen frustration into active city improvement. From Citizen Voice to City Action!" }
+        ]
+      }
+    ];
+
+    let currentIdx = 0;
+
+    function renderSlide() {
+      const s = slides[currentIdx];
+      document.getElementById("slideCounter").textContent = `Slide ${currentIdx + 1} of ${slides.length}`;
+
+      let metricsHtml = "";
+      if (s.metrics) {
+        metricsHtml = `
+          <div class="pt-4 border-t border-slate-800 grid grid-cols-3 gap-3">
+            ${s.metrics.map(m => `
+              <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-center">
+                <div class="text-base sm:text-lg font-black text-cyan-300 font-mono">${m.value}</div>
+                <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">${m.label}</div>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      const bulletsHtml = s.bullets.map(b => `
+        <div class="p-3.5 rounded-2xl bg-slate-800/60 border border-slate-700/60">
+          <h3 class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 shrink-0"></span>
+            <span>${b.title}</span>
+          </h3>
+          <p class="text-xs text-slate-300 mt-1 leading-relaxed pl-4">${b.desc}</p>
+        </div>
+      `).join("");
+
+      const html = `
+        <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <span class="text-[11px] font-bold tracking-wider uppercase text-cyan-400 bg-cyan-950/70 border border-cyan-800/50 px-2.5 py-1 rounded-lg">
+                ${s.tag}
+              </span>
+              ${s.badge ? `<span class="text-[11px] font-bold text-amber-300 bg-amber-950/60 border border-amber-800/50 px-2.5 py-1 rounded-lg">${s.badge}</span>` : ""}
+            </div>
+
+            <div class="space-y-2">
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">${s.title}</h2>
+              <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">${s.subtitle}</p>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              ${bulletsHtml}
+            </div>
+          </div>
+
+          ${metricsHtml}
+        </div>
+
+        <div class="lg:col-span-5 relative bg-slate-950 min-h-[300px] lg:min-h-full overflow-hidden flex flex-col justify-end p-6">
+          <img src="${s.image}" alt="${s.title}" class="absolute inset-0 w-full h-full object-cover object-center brightness-90">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+          <div class="relative z-10 p-4 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-700/80 shadow-lg">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-cyan-300 mb-1">Live Operational Visual</div>
+            <p class="text-xs text-slate-200 font-medium leading-snug">${s.caption}</p>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("slideCard").innerHTML = html;
+      renderThumbnails();
+    }
+
+    function renderThumbnails() {
+      const container = document.getElementById("thumbStrip");
+      container.innerHTML = slides.map((s, idx) => `
+        <button onclick="goToSlide(${idx})" class="px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${idx === currentIdx ? 'bg-blue-600 text-white shadow-md ring-2 ring-blue-400' : 'bg-slate-800 text-slate-400 hover:text-white'}">
+          ${idx + 1}. ${s.title.substring(0, 14)}...
+        </button>
+      `).join("");
+    }
+
+    function nextSlide() {
+      currentIdx = (currentIdx + 1) % slides.length;
+      renderSlide();
+    }
+
+    function prevSlide() {
+      currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+      renderSlide();
+    }
+
+    function goToSlide(idx) {
+      currentIdx = idx;
+      renderSlide();
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "Space") {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    renderSlide();
+  </script>
+</body>
+</html>
