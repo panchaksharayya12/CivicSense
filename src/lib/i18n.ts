@@ -186,6 +186,7 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationDictionary> = {
     submitComplaintBtn: "Submit Complaint",
     submittedSuccess: "Complaint Submitted Successfully",
     appNumberLabel: "Application Number",
+    trackStatusBtn: "Track Status",
     notificationsTitle: "Notifications",
     notificationsSubtitle: "Real-time updates on your civic complaints and municipal actions.",
     markAllRead: "Mark all as read",

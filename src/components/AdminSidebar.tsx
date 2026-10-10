@@ -19,12 +19,20 @@ import {
   UserCheck,
 } from "lucide-react";
 
+interface AdminMenuItem {
+  name: string;
+  href: string;
+  icon: any;
+  badge?: string | number;
+  badgeColor?: string;
+}
+
 export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const { logout, demoLogin } = useAuth();
 
-  const menuItems = [
+  const menuItems: AdminMenuItem[] = [
     {
       name: "Dashboard",
       href: "/admin",
